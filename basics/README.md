@@ -20,6 +20,8 @@ and the DateFormate is the subclass insade java.time.format.DateTimeFormatter it
 
 ### Qustion :
 
+--------------------------------------------
+
  * 1- in Stretch Goals how can i do or print the speed of excute code .
 
 
