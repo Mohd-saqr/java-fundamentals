@@ -1,11 +1,13 @@
-#Basic Library
+# Basic Library
 
 #### we learned how to calculate avareage of 1D array and 2D arry
 #### we learned how to use the test Junit in java
-##Qustion :
+## Qustion :
 NO QUSTION....
 
-#Lab-02 requirements :
+---------------------------------------------------
+
+# Lab-02 requirements :
 Arrays, Loops, Imports, ArrayLists
 Overview
 This lab is dedicated to creating, interacting with and manipulating arrays in Java. Arrays in Java have a fixed size. Arrays are created with a certain size and they never shrink or grow. Java arrays are typed. You can have an array of integers, or an array of strings, but not an array mixed with integers and strings.
