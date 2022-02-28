@@ -19,8 +19,8 @@ class LibraryTest {
 
     @Test
     void CalculatingAverages(){
-        double result =library.CalculatingAverages(new int[]{1,1,1,1});
-       assertEquals(1,result);
+        double result =library.CalculatingAverages(new int[]{10,2,3,4});
+       assertEquals(4.75,result);
 
     }
     @Test
@@ -31,8 +31,17 @@ class LibraryTest {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
-        double result =library.ArraysOfArrays(test);
-        assertEquals(60.0,result);
+        int[][] test2 = {
+                {1, 2, 3, 4, 5, 6, 7},
+                {0, 0, 0, 0, 0, 0, 0},
+                {55, 54, 60, 53, 59, 57, 61},
+                {0, 0, 0, 0, 1, 2, 3}
+        };
+        int[] result =library.ArraysOfArrays(test);
+        int[] result2 =library.ArraysOfArrays(test2);
+
+        assertArrayEquals(new int[]{55, 54, 60, 53, 59, 57, 61},result);
+        assertArrayEquals(new int[]{0, 0, 0, 0, 0, 0, 0},result2);
     }
 
 

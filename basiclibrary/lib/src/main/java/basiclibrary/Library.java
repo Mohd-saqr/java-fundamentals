@@ -9,7 +9,7 @@ public class Library {
 
     public static void main (String []args){
 
-        System.out.println(roll(2));
+        System.out.println(roll(4));
 
     }
 public static ArrayList  roll(int num){
@@ -37,25 +37,32 @@ public  boolean containsDuplicates(int[]arr){
 }
 
 public  double CalculatingAverages(int[]arr){
-        int sum =0;
+        double sum =0;
         for (int index=0;index<arr.length;index++){
             sum+=arr[index];
         }
         return sum/ arr.length;
 }
 
-public  double ArraysOfArrays(int[][]arr){
-        int sum=0;
-        int count =0;
-        for (int index =0;index<arr.length;index++){
-            for (int index2=0;index2< arr[index].length;index2++){
-                sum+=arr[index][index2];
-                count++;
+public  int[] ArraysOfArrays(int[][]arr){
+        double lowAvg=CalculatingAverages(arr[0]);;
+        int indexArr=0;
+       for (int index =0;index< arr.length;index++){
+            double b = CalculatingAverages(arr[index]);
+            if (b<lowAvg){
+                lowAvg=b;
+               indexArr=index;
             }
-        }
-        return sum/count;
+
+       }
+
+        return arr[indexArr];
 }
 
-
+// for (int index =0;index<arr.length;index++){
+//        for (int index2=0;index2< arr[index].length;index2++){
+//            sum+=arr[index][index2];
+//            count++;
+//        }
 
 }
