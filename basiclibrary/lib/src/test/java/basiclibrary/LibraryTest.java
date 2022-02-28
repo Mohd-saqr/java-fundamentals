@@ -19,7 +19,7 @@ class LibraryTest {
 
     @Test
     void CalculatingAverages(){
-        float result =library.CalculatingAverages(new int[]{1,1,1,1});
+        double result =library.CalculatingAverages(new int[]{1,1,1,1});
        assertEquals(1,result);
 
     }
@@ -31,7 +31,7 @@ class LibraryTest {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
-        float result =library.ArraysOfArrays(test);
+        double result =library.ArraysOfArrays(test);
         assertEquals(60.0,result);
     }
 
