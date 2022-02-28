@@ -14,7 +14,7 @@
         System.out.println("I own " + catCount + " " + pluralize("cat", catCount) + ".");
         int turtleCount = 0;
         System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCount) + ".");
-        flipNHeads(1);
+        flipNHeads(10);
 
 
         Timer timer = new Timer();
@@ -36,23 +36,23 @@
 
 
 
-    public static void flipNHeads(double n){
-        int flip =0;
+    public static void flipNHeads(int n){
+
         int heads=0;
         Random ran = new Random();
-        float randomNumber =ran.nextFloat();
-        for(float index =randomNumber;index<=n;index+=0.1){
-            if (index<0.5){
-                flip++;
+
+        for(int index =0;index<=n;index++){
+            double randomNumber =ran.nextDouble();
+            if (randomNumber<0.5){
                 System.out.println("tails");
-            }else if (index>0.5){
+            }else if (randomNumber>0.5){
                 heads ++;
-                flip++;
+
                 System.out.println("heads");
             }
 
         }
-        System.out.println("It took " + flip + " flip to flip " + heads +" head in row");
+        System.out.println("It took " + n + " flip to flip " + heads +" head in row");
     }
 
 
