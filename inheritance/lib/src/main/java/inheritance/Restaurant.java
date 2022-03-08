@@ -26,8 +26,8 @@ public class Restaurant extends Review {
         return name;
     }
 
-    public double getStar() {
-        return Integer.parseInt(star);
+    public String getStar() {
+        return star;
     }
 
     public double getPriceCategory() {

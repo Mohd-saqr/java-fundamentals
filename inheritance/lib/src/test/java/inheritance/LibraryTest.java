@@ -17,7 +17,7 @@ class LibraryTest {
     void instance(){
         Restaurant mac = new Restaurant("MAC");
         mac.toString();
-       assertEquals(0.0,mac.getStar());
+       assertEquals("0.0",mac.getStar());
 
     }
     @Test
@@ -25,7 +25,7 @@ class LibraryTest {
         Restaurant mac = new Restaurant("MAC");
         mac.addReview("this is expensive resturant","Moahmmed",4);
         mac.addReview("this is expensive resturant","Moahmmed",3.5f);
-        assertEquals(3.75,mac.getStar());
+        assertEquals("3.75",mac.getStar());
 
     }
 
@@ -50,8 +50,8 @@ class LibraryTest {
         mac.addReview("good resturant","sameer", 3.50F);
         pizzaHut.addReview("good pizaa","khalil",4);
         pizzaHut.addReview("good pizaa","khalil",2);
-        assertEquals(4.25,mac.getStar());
-        assertEquals(3,pizzaHut.getStar());
+        assertEquals("4.25",mac.getStar());
+        assertEquals("3",pizzaHut.getStar());
     }
     @Test
     void updateStars (){
@@ -59,9 +59,9 @@ class LibraryTest {
 
         ShawrmaSAGE.addReview("BEST resturant","ahmad",5);
         ShawrmaSAGE.addReview("good SHAWRMA","sameer", 2);
-        assertEquals(3.5,ShawrmaSAGE.getStar());
+        assertEquals("3.5",ShawrmaSAGE.getStar());
         ShawrmaSAGE.updateStars(4,2);
-        assertEquals(4.5,ShawrmaSAGE.getStar());
+        assertEquals("4.5",ShawrmaSAGE.getStar());
     }
 
 
