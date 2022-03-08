@@ -1,13 +1,14 @@
 package inheritance;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class Restaurant extends Review {
     private String name;
-    private float star;
-    private float priceCategory;
+    private String star ="0.0";
+    private double priceCategory;
     private List<Review> reviews= new ArrayList<>();
 
 
@@ -25,11 +26,11 @@ public class Restaurant extends Review {
         return name;
     }
 
-    public float getStar() {
-        return star;
+    public double getStar() {
+        return Integer.parseInt(star);
     }
 
-    public float getPriceCategory() {
+    public double getPriceCategory() {
         return priceCategory;
     }
 
@@ -49,7 +50,7 @@ public class Restaurant extends Review {
         return t;
     }
 
-    public void addReview(String Body, String Author, float numberOfStars) {
+    public void addReview(String Body, String Author, double numberOfStars) {
 
         if (numberOfStars > 5) {
             numberOfStars = 5;
@@ -71,7 +72,7 @@ public class Restaurant extends Review {
     }
 
     @Override
-    public void updateStars(float NewNumberOfStars , int id){
+    public void updateStars(double NewNumberOfStars , int id){
         if (NewNumberOfStars > 5) {
             NewNumberOfStars = 5;
         }
@@ -87,12 +88,14 @@ public class Restaurant extends Review {
     }
 
     private void setStars(){
-        float total =0;
+        double total =0;
         for (Review review :reviews){
          total+=review.getNumberOfStars();
 
             }
-        this.star=total/reviews.size();
+        DecimalFormat format = new DecimalFormat("#.##");
+        total=total/reviews.size();
+        this.star=format.format(total);
     }
 
 
