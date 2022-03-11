@@ -8,14 +8,22 @@ import java.util.List;
 public class Restaurant extends Review {
     private String name;
     private String star ="0.0";
-    private double priceCategory;
+    private String priceCategory ="0.0" +"$";
     private List<Review> reviews= new ArrayList<>();
 
 
     public Restaurant(String Name ) {
         this.name = Name;
 
+
     }
+
+    public Restaurant(String Name,double priceCategory ) {
+        this.name = Name;
+        DecimalFormat format = new DecimalFormat("#.###$");
+        this.priceCategory = format.format(priceCategory);
+    }
+
 
 
     public void setName(String name) {
@@ -30,7 +38,7 @@ public class Restaurant extends Review {
         return star;
     }
 
-    public double getPriceCategory() {
+    public String getPriceCategory() {
         return priceCategory;
     }
 
@@ -52,14 +60,14 @@ public class Restaurant extends Review {
 
     public void addReview(String Body, String Author, double numberOfStars) {
 
-        if (numberOfStars > 5) {
-            numberOfStars = 5;
+        if (numberOfStars > 5 || numberOfStars<0) {
+            System.out.println("the number of stars should under or equal 5");
+        }else {
+
+            Review newReview = new Review(Body, Author, numberOfStars, this);
+            this.reviews.add(newReview);
+            setStars();
         }
-
-        Review newReview = new Review(Body, Author, numberOfStars,this);
-        this.reviews.add(newReview);
-        setStars();
-
 
     }
 
@@ -73,18 +81,19 @@ public class Restaurant extends Review {
 
     @Override
     public void updateStars(double NewNumberOfStars , int id){
-        if (NewNumberOfStars > 5) {
-            NewNumberOfStars = 5;
-        }
-        for (Review review :reviews){
-            if (review.getID()==id){
-                super.setNumberOfStars(NewNumberOfStars);
-                review.setNumberOfStars(NewNumberOfStars);
+        if (NewNumberOfStars > 5 || NewNumberOfStars<0) {
+            System.out.println("the number of stars should under or equal 5");
+        }else {
+            for (Review review : reviews) {
+                if (review.getID() == id) {
+                    super.setNumberOfStars(NewNumberOfStars);
+                    review.setNumberOfStars(NewNumberOfStars);
+
+                }
 
             }
-
+            setStars();
         }
-        setStars();
     }
 
     private void setStars(){

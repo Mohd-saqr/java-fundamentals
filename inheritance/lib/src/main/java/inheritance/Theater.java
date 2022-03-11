@@ -63,24 +63,25 @@ public class Theater extends Review {
     }
 
     public void addReview(String Body, String Author, double numberOfStars) {
-        if (numberOfStars > 5) {
-            numberOfStars = 5;
+        if (numberOfStars > 5 || numberOfStars<0) {
+            System.out.println("the number of stars should under or equal 5");
+        }else {
+            Review newReview = new Review(Body, Author, numberOfStars, this);
+            this.reviews.add(newReview);
+            setStars();
         }
-        Review newReview = new Review(Body, Author, numberOfStars,this);
-        this.reviews.add(newReview);
-        setStars();
     }
 
     public void addReview(String Body, String Author, float numberOfStars,String movie) {
-        if (numberOfStars > 5) {
-            numberOfStars = 5;
+        if (numberOfStars > 5 || numberOfStars<0) {
+            System.out.println("the number of stars should under or equal 5");
+        }else {
+            Review newReview = new Review(Body, Author, numberOfStars, this);
+            String m = newReview + movie;
+            newReview.setMovie(movie);
+            this.reviews.add(newReview);
+            setStars();
         }
-        Review newReview = new Review(Body,Author,numberOfStars,this);
-        String m = newReview + movie;
-        newReview.setMovie(movie);
-        this.reviews.add(newReview);
-        setStars();
-
     }
 
 

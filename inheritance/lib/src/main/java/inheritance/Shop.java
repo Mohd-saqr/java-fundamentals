@@ -35,12 +35,13 @@ public class Shop extends Review{
     }
 
     public void addReview(String Body, String Author, double numberOfStars) {
-        if (numberOfStars > 5) {
-            numberOfStars = 5;
+        if (numberOfStars > 5 || numberOfStars<0) {
+            System.out.println("the number of stars should under or equal 5");
+        }else {
+            Review newReview = new Review(Body, Author, numberOfStars, this);
+            this.reviews.add(newReview);
+            setStars();
         }
-        Review newReview = new Review(Body, Author, numberOfStars,this);
-        this.reviews.add(newReview);
-        setStars();
     }
 
     public String getStar() {
