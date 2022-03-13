@@ -15,14 +15,14 @@ class LibraryTest {
 
     @Test
     void instance(){
-        Restaurant mac = new Restaurant("MAC");
+        Restaurant mac = new Restaurant("MAC",4);
         mac.toString();
        assertEquals("0.0",mac.getStar());
 
     }
     @Test
     void AddReview(){
-        Restaurant mac = new Restaurant("MAC");
+        Restaurant mac = new Restaurant("MAC",4);
         mac.addReview("this is expensive resturant","Moahmmed",4);
         mac.addReview("this is expensive resturant","Moahmmed",3.5f);
         assertEquals("3.75",mac.getStar());
@@ -31,7 +31,7 @@ class LibraryTest {
 
     @Test
     void instanceOf(){
-        Restaurant mac = new Restaurant("MAC");
+        Restaurant mac = new Restaurant("MAC",4);
         if (mac instanceof Restaurant){
             mac.toString();
         }
@@ -44,8 +44,8 @@ class LibraryTest {
 
     @Test
     void MultiReview(){
-        Restaurant mac = new Restaurant("MAC");
-        Restaurant pizzaHut = new Restaurant("pizza hut");
+        Restaurant mac = new Restaurant("MAC",4);
+        Restaurant pizzaHut = new Restaurant("pizza hut",4);
         mac.addReview("Burger resturant","ahmad",5);
         mac.addReview("good resturant","sameer", 3.50F);
         pizzaHut.addReview("good pizaa","khalil",4);
@@ -55,7 +55,7 @@ class LibraryTest {
     }
     @Test
     void updateStars (){
-        Restaurant ShawrmaSAGE = new Restaurant("ShawrmaSAGE");
+        Restaurant ShawrmaSAGE = new Restaurant("ShawrmaSAGE",4);
 
         ShawrmaSAGE.addReview("BEST resturant","ahmad",5);
         ShawrmaSAGE.addReview("good SHAWRMA","sameer", 2);

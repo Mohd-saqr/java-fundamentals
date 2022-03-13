@@ -8,7 +8,7 @@ public class App {
 //        mac.addReview("this is amazing resturant","mohammed",4);
 //        mac.addReview("this is amazing ","saleem",5);
 
-Restaurant test = new Restaurant("ooo");
+Restaurant test = new Restaurant("ooo",0);
         test.addReview("this is amazing ","saleem",5);
         test.addReview("this is amazing ","saleem",-1);
         test.getReviews().toString();

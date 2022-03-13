@@ -8,20 +8,22 @@ import java.util.List;
 public class Restaurant extends Review {
     private String name;
     private String star ="0.0";
-    private String priceCategory ="0.0" +"$";
+    private String priceCategory ="";
     private List<Review> reviews= new ArrayList<>();
 
 
-    public Restaurant(String Name ) {
+
+
+    public Restaurant(String Name,int priceCategory ) {
         this.name = Name;
+        if (priceCategory>5 || priceCategory<1){
+            System.out.println("Price Must between 1 and 5");
+        }else {
+            for (int l = 1; l <= priceCategory; l++) {
+                this.priceCategory += "$";
 
-
-    }
-
-    public Restaurant(String Name,double priceCategory ) {
-        this.name = Name;
-        DecimalFormat format = new DecimalFormat("#.###$");
-        this.priceCategory = format.format(priceCategory);
+            }
+        }
     }
 
 
